@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+
+body{
+    font-family: 'Sarabun', 'Arial';
+    margin: 0;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
+h1{
+    font-family: 'Gideon Roman';
+}
+
+/* login section */
+.login-bg{
+    background-image: url("images/login-bg.jpg");
+    filter: blur(8px);
+    width: 100%;
+    height: 44rem;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    box-sizing: border-box;
+    animation: moveIt 10s linear infinite;
+}
+
+.login-container{
+    width: 22rem;
+    height: 32rem;
+    position: absolute;
+    background-color: #404040;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+    border-radius: .6rem;
+    box-shadow: 0 0 5px 0 #1d1d1d;
+}
+
+.login-inside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+    height: 85%;
+    margin: auto;
+}
+
+.login-message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+}
+
+.login-container h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: .6rem;
+    padding-top: 3.2rem;
+    letter-spacing: 5px;
+    transition: all 200ms ease-in;
+}
+
+.login-container h1:hover{
+    transform: translate(5px, -5px);
+    text-shadow: -5px 5px black;
+}
+
+.login-container p{
+    margin: 0;
+    margin-bottom: .2em;
+    color: #fff;
+}
+
+.login-container input{
+    width: 95%;
+    height: 2.8em;
+    border: 0;
+    padding-left: .8em;
+    margin-bottom: .8em;
+    border-radius: .4em;
+}
+
+.login-container button{
+    width: 100%;
+    height: 2.5em;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    opacity: 1 !important;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: .8em !important;
+    margin-bottom: 1em;
+    background-color: #1d1d1d;
+    border-radius: .2em;
+}
+
+.login-container .login-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5em;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #1d1d1d;
+    border-radius: .2em;
+}
+
+.login-container a:link, .login-container a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-container hr{
+    width: 80%;
+    margin-bottom: 1.2em;
+}
+
+.login-feature{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2em !important;
+}
+
+.login-remember{
+    display: flex;
+    justify-content: flex-start;
+    gap: .4em;
+    align-items: center;
+}
+
+.login-remember label{
+    color: #fff;
+}
+
+.login-remember input{
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Register section */
+.register-bg{
+    width: 100%;
+    height: 44rem;
+    background-image: url('images/signup-bg.jpg');
+    filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: moveIt 10s linear infinite;
+}
+
+.register-container{
+    width: 22rem;
+    height: 32rem;
+    opacity: .8;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #404040;
+    border-radius: .6rem;
+    box-shadow: 0 0 5px 0 #1d1d1d;
+
+}
+
+.register-message{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+}
+
+.register-inside{
+    width: 85%;
+    height: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-container hr{
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 1.2em;
+}
+
+.register-container h1{
+    text-align: center;
+    color: #fff;
+    padding-top: 4rem;
+    margin-bottom: .6rem;
+    letter-spacing: 5px;
+    transition: all 200ms ease-in;
+}
+
+.register-container h1:hover{
+    transform: translate(5px, -5px);
+    text-shadow: -5px 5px black;
+}
+
+.register-container p{
+    margin: 0;
+    margin-bottom: .2em;
+    color: #fff;
+}
+
+.register-container input{
+    width: 95%;
+    height: 2.8em;
+    border: 0;
+    padding-left: .8em;
+    margin-bottom: .8em;
+    border-radius: .4em;
+}
+
+.register-container input[type='date']::-webkit-calendar-picker-indicator{
+    padding-right: .8em;
+}
+
+.register-container button{
+    width: 100%;
+    height: 2.5em;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    opacity: 1 !important;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: .8em !important;
+    margin-bottom: 1em;
+    background-color: #1d1d1d;
+    border-radius: .2em;
+}
+
+.register-container .register-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5em;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #1d1d1d;
+    border-radius: .2em;
+}
+
+.register-container a:link, .register-container a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* main */
+.main-bg{
+    background-image: url("images/login-bg.jpg");
+    width: 100%;
+    height: fit-content;
+    padding: 1.4rem;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.main-container{
+    width: 85%;
+    margin: auto;
+}
+
+.main-container h1{
+    text-align: center;
+    letter-spacing: 6px;
+}
+
+.main-container h3{
+    text-align: center;
+}
+
+.main-navigator{
+    display: flex;
+    font-size: 1.8rem;
+    justify-content: space-around;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 2.5rem;
+}
+
+.main-navigator a{
+    transition: all 400ms ease-in;
+}
+
+.main-navigator a:link, .main-navigator a:visited{
+    position: relative;
+    color: #1d1d1d;
+    text-decoration: none;
+}
+
+.main-navigator #games::before{
+    content: '\f15c';
+}
+
+.main-navigator #creators::before{
+    content: '\f0eb';
+    top: 50%;
+}
+
+.main-navigator a::before{
+    font-size: 2rem;
+    font-family: fontAwesome;
+    display: block;
+    position: absolute;
+    transform: translateY(-50%);
+    padding-left: .4em;
+    top: 55%;
+    left: 78%;
+    opacity: 0;
+    transition: all 600ms ease-in;
+}
+
+.main-navigator a:hover{
+    letter-spacing: 5px;
+}
+
+.main-navigator a:hover::before{
+    opacity: 1;
+    left: 100%;
+}
+
+.main-pftag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d1d1d;
+    color: #fff;
+    opacity: .8;
+    border-radius: 1rem;
+}
+
+.main-pftag a:link, .main-pftag a:visited{
+    color: #fff;
+}
+
+/* main Search Game section */
+.searchGame{
+    width: 85%;
+    margin: auto;
+    opacity: .8;
+    color: #fff;
+    background-color: #404040;
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2.8rem;
+}
+
+.searchGame h2{
+    width: 20%;
+    font-size: 1.6rem;
+    text-align: start;
+    letter-spacing: 2.5px;
+    text-shadow: -2px 2px #000;
+}
+
+.searchGame-tag{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchGame-tag i{
+    width: 20%;
+    text-align: end;
+    font-size: 2.1rem;
+    text-shadow: 0 0 5px #000;
+}
+
+.searchGame-advert{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1rem;
+    gap: .2rem;
+    padding: 1rem;
+    color: #fff;
+    background-color: #1d1d1d;
+    border-radius: 1rem
+}
+
+.searchGame-advert img{
+    border-radius: .6rem;
+}
+
+.searchGame-advert label{
+    padding: .3rem;
+}
+
+.searchGame-form{
+    display: flex;
+    gap: .8rem;
+    margin: 2rem;
+    height: 2.8rem;
+    justify-content: center;
+}
+
+.searchGame-form input{
+    width: 70%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: .5rem;
+    border: 0;
+}
+
+.searchGame-form button{
+    width: 3rem;
+    height: 100%;
+    font-size: 1.2rem;
+    border: 0;
+    text-align: center;
+    padding: .4rem;
+    border-radius: .5rem;
+    color: #fff;
+    background-color: #000;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+
+.searchGame-container{
+    display: grid;
+    margin: auto;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-gap: 5rem 0;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Search User */
+.searchUser{
+    width: 85%;
+    margin: auto;
+    opacity: .8;
+    color: #fff;
+    background-color: #404040;
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2.8rem;
+}
+
+.searchUser h2{
+    width: 20%;
+    font-size: 1.6rem;
+    text-align: start;
+    letter-spacing: 2.5px;
+    text-shadow: -2px 2px #000;
+}
+
+.searchUser-tag{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchUser-tag i{
+    width: 20%;
+    text-align: end;
+    font-size: 2.1rem;
+    text-shadow: 0 0 5px #000;
+}
+
+.searchUser-container{
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-gap: 3rem 0;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    align-items: center;
+}
+
+.searchUser-container label{
+    font-size: 1.1rem;
+    padding-right: .8rem;
+}
+
+.searchUser-advert{
+    width: 14rem;
+    text-overflow: ellipsis; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: #1d1d1d;
+}
+
+.searchUser-form{
+    display: flex;
+    gap: .8rem;
+    margin: 2rem;
+    height: 2.8rem;
+    justify-content: center;
+}
+
+.searchUser-form input{
+    width: 70%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: .5rem;
+    border: 0;
+}
+
+.searchUser-form button{
+    width: 3rem;
+    height: 100%;
+    font-size: 1.2rem;
+    border: 0;
+    text-align: center;
+    padding: .4rem;
+    border-radius: .5rem;
+    color: #fff;
+    background-color: #000;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+
+@keyframes moveIt {
+    0% {background-position: top left;}
+    50% {background-position: bottom right;}
+    100% {background-position: top left;}
+  }

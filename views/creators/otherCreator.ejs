@@ -1,0 +1,14 @@
+<h1>Name: <%= creator.name %> ||  Birthday: <%= creator.birthday.split('T')[0] %></h1>
+<h4><a href="/">POSTGAME</a></h4>
+Other User Account
+<br>
+<h2>Creator's Game</h2>
+<br>
+<% games.forEach(game => { %>
+    <% if(creator.id == game.creator) { %>
+        <div>
+            <a href="/games/<%= game.id %>"><img width="150" height="100" src="<%= game.coverImgPath %>"><br></a>
+            <label><%= game.title %></label><br>
+        </div>
+    <% } %>
+<% }) %>

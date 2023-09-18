@@ -1,0 +1,24 @@
+<% if(locals.errorMessage != null){ %>
+    <%= errorMessage %>
+<% } %>
+<form action="/creators/<%= creator.id %>?_method=PUT" method="POST">
+    <label for="image">Profile Image</label>
+    <input type="file" name="image" accept="image/*"class="filepond">
+    <br>
+    <label>Current name: <%= creator.name %></label><br>
+    <label for="newName">New name:</label>
+    <input type="text" name="newName" value="<%= useBack.name %>"><br>
+    <label for="description">Description</label>
+    <textarea name="description" cols="50" rows="10" value="<%= useBack.description %>"></textarea><br>
+    <label for="birthday">Current Birthday: <%= creator.birthday %></label><br>
+    <label for="newBd">New Birthday</label>
+    <input type="date" name="newBd"><br>
+    <label for="fb">FaceBook</label>
+    <input type="text" name="fb" placeholder="Enter your link here" value="<%= useBack.fb %>"><br>
+    <label for="insta">Instagram</label>
+    <input type="text" name="insta" placeholder="Enter your link here" value="<%= useBack.insta %>"><br>
+    <label for="git">GitHub</label>
+    <input type="text" name="git" placeholder="Enter your link here" value="<%= useBack.git %>"><br>
+    <a href="/creators/<%= creator.id %>">Cancel</a>
+    <button type="submit">Update</button>
+</form>

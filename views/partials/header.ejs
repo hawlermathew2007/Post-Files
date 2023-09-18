@@ -1,0 +1,9 @@
+<div class="main-pftag">
+    <i class="fa-solid fa-gear" style="font-size: 1.4rem; margin-left: 1.8rem;"></i>
+    <h1>POST FILES</h1>
+    <% if(user.avatar !== null) { %>
+        <a href="/creators/<%= user.id %>"><img width="50" height="50" src="<%= user.creatorAvatar %>"></a>
+    <% } else{ %>
+        <a href="/creators/<%= user.id %>"><i class="fa-regular fa-image" style="font-size: 1.4rem;border-radius: 50%; border: 3.4px solid; padding: .6rem; margin-right: 1.8rem;"></i></a>
+    <% } %>
+</div>

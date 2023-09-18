@@ -1,0 +1,22 @@
+<div class="searchGame">
+    <div class="searchGame-tag">
+        <h2 style="font-weight: 500;">Total: <%= games.length %></h2>
+        <h2>Search Files</h2>
+        <i class="fa-solid fa-file-lines"></i>
+    </div>
+    <form action="/" method="GET">
+        <div class="searchGame-form">
+            <input type="text" name="name" value="<%= searchOptions.name %>" placeholder="Files you wanna find :>">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </form>
+    <br>
+    <div class="searchGame-container">
+        <% games.forEach(game => { %>
+            <div class="searchGame-advert">
+                <a href="/games/<%= game.id %>"><img width="150" height="100" src="<%= game.coverImgPath %>"><br></a>
+                <label><%= game.title %></label>
+            </div>
+        <% }) %>
+    </div>
+</div>

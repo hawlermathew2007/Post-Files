@@ -1,0 +1,13 @@
+<h1><a href="/">POSTGAME</a></h1>
+<br>
+<img width="200" height="150" src="<%= game.coverImgPath %>">
+<br>
+<div>
+    <h4>Title: <%= game.title %></h4>
+    <h4>Created by: <a href="/creators/<%= creator.id %>"><%= creator.name %></a></h4>
+    <h4>Date Created: <%= game.createdDate.toISOString().split('T')[0] %></h4>
+    <h4>Desription: <%= game.description %></h4>
+    <form action="/download/<%= game.id %>" method="GET">
+        <input type="submit" value="Download">
+    </form>
+</div>
