@@ -188,6 +188,16 @@ html{
     margin-left: 2px;
 }
 
+#mainCreator-avatar{
+    width: 5em;
+    height: 5em;
+    border-radius: 50%; 
+    box-shadow: 0 0 2px 2px #fff; 
+    padding: .2rem; 
+    margin-top: .2em; 
+    margin-bottom: 1.5rem;
+}
+
 .cube{
     position: relative;
     width: 1.2rem;

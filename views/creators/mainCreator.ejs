@@ -6,7 +6,7 @@
         <div class="mainCreator-info" id="info">
             <div class="mainCreator-info-left">
                 <% if(creator.avatar !== null) { %>
-                    <img width="50" height="50" src="<%= creator.creatorAvatar %>">
+                    <img id="mainCreator-avatar" src="<%= creator.creatorAvatar %>">
                 <% } else{ %>
                     <i class="fa-regular fa-image" style="font-size: 2.4rem;border-radius: 50%; box-shadow: 0 0 2px 2px #fff; padding: 1.2rem;background-color: #1d1d1d; margin-top: .2em; margin-bottom: 1.5rem;"></i>
                 <% } %>

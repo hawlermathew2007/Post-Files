@@ -355,6 +355,15 @@ h1{
     border-radius: 1rem;
 }
 
+.main-pftag #header-avatar{
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 50%; 
+    box-shadow: 0 0 2px 2px #fff; 
+    padding: .2rem;
+    margin-right: 1.8rem;
+}
+
 .main-pftag a:link, .main-pftag a:visited{
     color: #fff;
 }
