@@ -6,7 +6,7 @@
     </div>
     <form action="/creators" method="GET">
         <div class="searchUser-form">
-            <input type="text" name="name" value="<%= searchOptions.name %>">
+            <input type="text" name="name" value="<%= searchOptions.name %>" placeholder="Find any creators you want here :D">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
     </form>
@@ -16,7 +16,7 @@
                 <a href="/creators/<%= user.id %>" style="color: #fff; text-decoration: none;">
                     <div class="searchUser-advert">
                         <% if(user.avatar !== null) { %>
-                            <img width="50" height="50" src="<%= user.creatorAvatar %>">
+                            <img id="mainCreator-avatar" style="width: 3.4em; height: 3.4em; margin-top: 0; margin-bottom: 0;" src="<%= user.creatorAvatar %>">
                         <% } else{ %>
                             <i class="fa-regular fa-image" style="font-size: 1.4rem;border-radius: 50%; border: 2px solid; padding: 1rem;"></i>
                         <% } %>
