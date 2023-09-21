@@ -19,7 +19,11 @@
                     <i class="fa-brands fa-squarespace" style="font-size: 1.6rem; margin-right: 1rem;" title="Copy"></i>
                 </div>
                 <h4>Record making <%= games.filter(game => game.creator == creator.id).length %> files</h4>
-                <p>Describe yourself...</p>
+                <% if(creator.creatorDescription != null && creator.creatorDescription != '') { %>
+                    <p><%= creator.creatorDescription %></p>
+                <% } else { %>
+                    <p>Describe yourself...</p>
+                <% } %>
                 <div class="mainCreator-info-birthday">
                     <i class="fa-solid fa-cake-candles"></i>
                     <label><%= creator.birthday.split('T')[0] %></label>

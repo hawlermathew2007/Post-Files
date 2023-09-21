@@ -59,6 +59,7 @@ router.put('/:id', async (req, res) => {
     let creator;
     try{
         creator = await Creator.findById(req.params.id)
+        console.log(req.body)
         if (req.body.newName != ''){
             creator.name = req.body.newName
         }
@@ -96,7 +97,13 @@ router.put('/:id', async (req, res) => {
                 return
             }
         }
+        if (req.body.decription != ''){
+            creator.creatorDescription = req.body.decription
+            console.log('success', creator.creatorDescription)
+        }
+        console.log('success', creator.creatorDescription)
         await creator.save()
+        console.log('success', creator.creatorDescription)
         res.redirect(`/creators/${req.params.id}`)
     } catch{
         res.redirect(`/creators/${req.params.id}/edit`)
