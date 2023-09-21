@@ -1,7 +1,8 @@
 <div class="mainCreator-bg">
     <div class="mainCreator">
-        <div class="main-pftag" style="justify-content: center; margin-bottom: 4rem;box-shadow: 0 0 4px 0 #fff;border: 2px solid;">
+        <div class="main-pftag" style="position: relative; justify-content: center; margin-bottom: 4rem;box-shadow: 0 0 4px 0 #fff;border: 2px solid;">
             <a href="/" ><h1 style="letter-spacing: 3px;">POST FILES</h1></a>
+            <a href="/logout"><button id="mainCreator-pftag-Bt" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></button></a>
         </div>
         <div class="mainCreator-info" id="info">
             <div class="mainCreator-info-left">
@@ -28,7 +29,6 @@
                     <i class="fa-solid fa-cake-candles"></i>
                     <label><%= creator.birthday.split('T')[0] %></label>
                 </div>
-                <a href="/logout">Logout</a>
             </div>
         </div>
         <br>

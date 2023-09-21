@@ -20,6 +20,29 @@ html{
     background-size: cover;
 }
 
+#mainCreator-pftag-Bt{
+    position: absolute;
+    top: 50%;
+    left: -5rem;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: #1d1d1d;
+    font-size: 1.35rem;
+    padding: .85rem;
+    box-shadow: 0 0 2px 2px #fff;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
 .mainCreator{
     position: relative;
     width: 50%;

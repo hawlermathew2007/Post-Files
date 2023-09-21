@@ -101,9 +101,9 @@ router.put('/:id', async (req, res) => {
             creator.creatorDescription = req.body.decription
             console.log('success', creator.creatorDescription)
         }
-        console.log('success', creator.creatorDescription)
+        console.log('success', creator)
         await creator.save()
-        console.log('success', creator.creatorDescription)
+        console.log('success', creator)
         res.redirect(`/creators/${req.params.id}`)
     } catch{
         res.redirect(`/creators/${req.params.id}/edit`)
