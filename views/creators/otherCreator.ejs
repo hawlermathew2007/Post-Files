@@ -1,4 +1,4 @@
-<h1>Name: <%= creator.name %> ||  Birthday: <%= creator.birthday.split('T')[0] %></h1>
+<!-- <h1>Name: <%= creator.name %> ||  Birthday: <%= creator.birthday.split('T')[0] %></h1>
 <h4><a href="/">POSTGAME</a></h4>
 Other User Account
 <br>
@@ -11,4 +11,89 @@ Other User Account
             <label><%= game.title %></label><br>
         </div>
     <% } %>
-<% }) %>
+<% }) %> -->
+<div class="mainCreator-bg">
+    <div class="mainCreator" id="otherCreator">
+        <div class="main-pftag" style="position: relative; justify-content: center; margin-bottom: 4rem;box-shadow: 0 0 4px 0 #fff;border: 2px solid;">
+            <a href="/" ><h1 style="letter-spacing: 3px;">POST FILES</h1></a>
+        </div>
+        <div class="mainCreator-info" id="info">
+            <div class="mainCreator-info-left">
+                <% if(creator.avatar !== null) { %>
+                    <img id="mainCreator-avatar" src="<%= creator.creatorAvatar %>">
+                <% } else{ %>
+                    <i class="fa-regular fa-image" style="font-size: 2.4rem;border-radius: 50%; box-shadow: 0 0 2px 2px #fff; padding: 1.2rem;background-color: #1d1d1d; margin-top: .2em; margin-bottom: 1.5rem;"></i>
+                <% } %>
+                <button><i class="fa-solid fa-plus" style="padding-left: .06rem;padding-right: .06rem;"></i></button>
+            </div>
+            <div class="mainCreator-info-right">
+                <div class="mainCreator-nametag">
+                    <h1><%= creator.name %></h1>
+                    <i class="fa-brands fa-squarespace" style="font-size: 1.6rem; margin-right: 1rem;" title="Copy"></i>
+                </div>
+                <h4>Record making <%= games.filter(game => game.creator == creator.id).length %> files</h4>
+                <% if(creator.creatorDescription != null && creator.creatorDescription != '') { %>
+                    <p><%= creator.creatorDescription %></p>
+                <% } else { %>
+                    <p style="font-style: italic;">No Comment About Them</p>
+                <% } %>
+                <div class="mainCreator-info-birthday">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <label><%= creator.birthday.split('T')[0] %></label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <% if(games.filter(game => creator.id == game.creator) != 0) { %>
+            <div class="mainCreator-games" id="file">
+                <% games.forEach(game => { %>
+                        <% if(creator.id == game.creator) { %>
+                            <div class="mainCreator-games-advert">
+                                <a href="/games/<%= game.id %>"><img height="100" src="<%= game.coverImgPath %>"><br></a>
+                                <div class="mainCreator-games-edit">
+                                    <label><%= game.title %></label>
+                                    <button><i class="fa-solid fa-ellipsis"></i></button>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% }) %>
+            </div>
+            <% } else{ %>
+                <div class="mainCreator-games" style="display: block;" id="file">
+                    <h2 style="font-style: italic; font-weight: lighter; text-align: center; justify-self: center;">You haven't created any file</h2>
+                </div>
+            <% } %>
+        <div class="mainCreator-navigator">
+            <div class="cube">
+                <div class="front">
+                </div>
+                <div class="back">
+                </div>
+                <div class="top">
+                </div>
+                <div class="bottom">
+                </div>
+                <div class="left">
+                </div>
+                <div class="right">
+                </div>
+            </div>
+            <a href="#info"><button>I</button></a>
+            <a href="#file"><button style="font-family: Gideon Roman; font-weight: bold;">F</button></a>
+            <div class="cube" style="top: 100%; animation: rotate2 5s infinite linear">
+                <div class="front">
+                </div>
+                <div class="back">
+                </div>
+                <div class="top">
+                </div>
+                <div class="bottom">
+                </div>
+                <div class="left">
+                </div>
+                <div class="right">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

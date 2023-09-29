@@ -398,6 +398,9 @@ html{
     border: 0;
 }
 
+#otherCreator::before{
+    height: calc(3.3rem *3) !important;
+}
 
 @keyframes rotate1 {
     from{

@@ -1,11 +1,7 @@
 <div class="searchGame">
-    <div class="searchGame-tag">
-        <h2 style="font-weight: 500;">Total: <%= games.length %></h2>
-        <h2>Search Files</h2>
-        <i class="fa-solid fa-file-lines"></i>
-    </div>
     <form action="/" method="GET">
         <div class="searchGame-form">
+            <i class="fa-solid fa-file-lines" style="text-align: end; font-size: 2.6rem;text-shadow: 0 0 5px #000; padding-right: 1.2rem; border-right: 4px solid #000; border-right: 4px solid #000; box-shadow: 2px 0 0 0 #fff;"></i>
             <input type="text" name="name" value="<%= searchOptions.name %>" placeholder="Files you wanna find :>">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>

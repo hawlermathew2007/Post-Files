@@ -1,11 +1,11 @@
 <div class="searchUser">
-    <div class="searchUser-tag">
+    <!-- <div class="searchUser-tag">
         <h2><%= users.length %> Creators</h2>
         <h2>Search Creators</h2>
-        <i class="fa-regular fa-lightbulb"></i>
-    </div>
+    </div> -->
     <form action="/creators" method="GET">
         <div class="searchUser-form">
+            <i class="fa-regular fa-lightbulb" style="text-align: end; font-size: 2.6rem;text-shadow: 0 0 5px #000; padding-right: 1.2rem; border-right: 4px solid #000; box-shadow: 2px 0 0 0 #fff;"></i>
             <input type="text" name="name" value="<%= searchOptions.name %>" placeholder="Find any creators you want here :D">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
