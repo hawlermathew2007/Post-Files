@@ -7,7 +7,7 @@ const gameSchema = new mongoose.Schema({
     title: {
         type: String,
         require: true,
-        maxLength: 3
+        minLength: 3
     },
     description: {
         type: String

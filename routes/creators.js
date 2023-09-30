@@ -60,48 +60,47 @@ router.put('/:id', async (req, res) => {
     try{
         creator = await Creator.findById(req.params.id)
         console.log(req.body)
-        if (req.body.newName != ''){
+        if (req.body.newName != '' && req.body.newName != null){
             creator.name = req.body.newName
         }
-        if (req.body.newBd != ''){
+        if (req.body.newBd != ''  && req.body.newBd != null){
             creator.birthday = req.body.newBd
         }
-        if (req.body.image != ''){
+        if (req.body.image != ''  && req.body.image != null){
             const cover = JSON.parse(req.body.image)
             if (cover != null && ['image/png', 'image/jpg', 'image/svg'].includes(cover.type)) {
                 creator.avatar = new Buffer.from(cover.data, 'base64') 
                 creator.avatarType = cover.type
             }
         }
-        if (req.body.fb != ''){
-            if(req.body.fb.includes('https://')){
+        if (req.body.fb != '' && req.body.fb != null){
+            if(req.body.fb.includes('https://') && req.body.instaLink.includes('facebook.com')){
                 creator.fbLink = req.body.fb
             } else{
-                res.render('creators/edit.ejs', { errorMessage: 'Please enter a link' ,useBack: req.body, creator: creator })
+                res.render('creators/edit.ejs', { errorMessage: 'Please enter a Facebook link' ,useBack: req.body, creator: creator })
                 return
             }
         }
-        if (req.body.insta != ''){
-            if(req.body.insta.includes('https://')){
+        if (req.body.insta != '' && req.body.insta != null){
+            if(req.body.insta.includes('https://') && req.body.instaLink.includes('instagram.com')){
                 creator.instaLink = req.body.insta
-            } else{
-                res.render('creators/edit.ejs', { errorMessage: 'Please enter a link' ,useBack: req.body, creator: creator })
+            }else{
+                res.render('creators/edit.ejs', { errorMessage: 'Please enter a Instagram link' ,useBack: req.body, creator: creator })
                 return
             }
         }
-        if (req.body.git != ''){
-            if(req.body.git.includes('https://')){
+        if (req.body.git != '' && req.body.git != null){
+            if(req.body.git.includes('https://') && req.body.instaLink.includes('github.com')){
                 creator.githubLink = req.body.git
             } else{
-                res.render('creators/edit.ejs', { errorMessage: 'Please enter a link' ,useBack: req.body, creator: creator })
+                res.render('creators/edit.ejs', { errorMessage: 'Please enter a github link' ,useBack: req.body, creator: creator })
                 return
             }
         }
-        if (req.body.decription != ''){
+        if (req.body.decription != '' && req.body.decription != null){
             creator.creatorDescription = req.body.decription
             console.log('success', creator.creatorDescription)
         }
-        console.log('success', creator)
         await creator.save()
         console.log('success', creator)
         res.redirect(`/creators/${req.params.id}`)

@@ -55,7 +55,8 @@ router.post('/', checkAuth, upload.array('game'), async (req, res) => {
     try{
         const newGame = await game.save()
         res.redirect('/')
-    } catch{
+    } catch(e){
+        console.log(e)
         unlinkFile(req.files, req.session.passport.user)
         res.redirect(`/creators/${req.session.passport.user}`)
     }

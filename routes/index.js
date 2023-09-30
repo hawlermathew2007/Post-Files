@@ -47,7 +47,7 @@ passport.deserializeUser( (id, done) => {
 })  
 
 router.get('/', checkAuth, async (req, res) =>{
-    console.log(req.session)
+    // console.log(req.session)
     let searchOptions = {}
     if(req.query.name != '' && req.query.name != null){
         searchOptions.title = new RegExp(req.query.name, 'i')
