@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheet/main.css">
     <link rel="stylesheet" href="/stylesheet/creator.css">
+    <link rel="stylesheet" href="/stylesheet/games.css">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
     <link
         href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
@@ -36,13 +37,13 @@
             }
         );
 
-        FilePond.create(
-            document.getElementById('multiple-files'),
-            {
-                stylePanelAspectRatio: 45/150,
-                labelIdle: `Upload Files`
-            }
-            );
+        // FilePond.create(
+        //     document.getElementById('multiple-files'),
+        //     {
+        //         stylePanelAspectRatio: 45/150,
+        //         labelIdle: `Upload Files`
+        //     }
+        //     );
 
         FilePond.parse(document.body)
     </script>

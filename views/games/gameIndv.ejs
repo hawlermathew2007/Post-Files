@@ -1,13 +1,21 @@
-<h1><a href="/">POSTGAME</a></h1>
-<br>
-<img width="200" height="150" src="<%= game.coverImgPath %>">
-<br>
-<div>
-    <h4>Title: <%= game.title %></h4>
-    <h4>Created by: <a href="/creators/<%= creator.id %>"><%= creator.name %></a></h4>
-    <h4>Date Created: <%= game.createdDate.toISOString().split('T')[0] %></h4>
-    <h4>Desription: <%= game.description %></h4>
-    <form action="/download/<%= game.id %>" method="GET">
-        <input type="submit" value="Download">
-    </form>
+<div class="gameIndv-bg">
+    <div class="gameIndv-container">
+        <div class="main-pftag" style="position: relative; justify-content: center; margin-bottom: 4rem;box-shadow: 0 0 4px 0 #fff;border: 2px solid;">
+            <a href="/" ><h1 style="letter-spacing: 3px;">POST FILES</h1></a>
+        </div>
+        <div class="gameIndv-game">
+            <h1><%= game.title %></h1>
+            <div class="gameIndv-game-main">
+                <img width="280" height="200" src="<%= game.coverImgPath %>">
+                <div class="gameIndv-info">
+                    <h3>Created by: <a style="font-style: italic; color: #1d1d1d; text-shadow: -1px 1px 3px #fff, 1px -1px 3px #fff;" href="/creators/<%= creator.id %>"><%= creator.name %></a></h3>
+                    <h3>Date Created: <%= game.createdDate.toISOString().split('T')[0] %></h3>
+                    <h3>Desription: <%= game.description %></h3>
+                    <form action="/download/<%= game.id %>" method="GET">
+                        <input type="submit" value="Download">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

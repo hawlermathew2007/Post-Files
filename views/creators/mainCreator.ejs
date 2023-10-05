@@ -51,11 +51,15 @@
                         <input type="text" name="title" placeholder="Title">
                         <label for="description" style="margin-left: .4rem;">Description</label><br>
                         <textarea name="description"></textarea>
-                        <p style="font-style: italic; margin-left: .4rem;">Fill up all the blank to create your files</p>
+                        <% if(locals.errorMessage != null){ %>
+                            <p style="font-style: italic; margin-left: .4rem;"><%= errorMessage %></p>
+                        <% } else{ %>
+                            <p style="font-style: italic; margin-left: .4rem;">Fill up all the blank to create your files</p>
+                        <% } %>
                     </div>
                     <div class="games-upload">
                         <input type="file" name="image" accept="image/*" required class="filepond">
-                        <input type="file" name="game" id="multiple-files" required multiple class="filepond">
+                        <input type="file" name="game" required multiple>
                     </div>
                 </div>
             </form>
@@ -116,5 +120,5 @@
     </div>
 </div>
 <!-- 
-Problems: filepond overflow, display errorMessage for create files section, cannot update link and description.
-Mission: css for each file and edit creator route, animation for smooth website, info portion. edit files (delete, update)-->
+Problems: cannot update link and description.
+Mission: css for each file and edit creator route, animation for smooth website, info portion. edit files (delete, update), how to style upload file-->

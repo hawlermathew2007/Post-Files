@@ -35,12 +35,14 @@ router.get('/:id', checkAuth,async (req, res) => {
 })
 
 router.post('/', checkAuth, upload.array('game'), async (req, res) => {
+    const creator = await Creator.findById(req.session.passport.user)
+    const games = await Game.find({})
     const cover = JSON.parse(req.body.image)
     if (cover != null && ['image/png', 'image/jpg', 'image/svg'].includes(cover.type)) {
         coverImage = new Buffer.from(cover.data, 'base64')
         coverImageType = cover.type
     } else{
-        res.redirect(`/creators/${req.session.passport.user}`)
+        res.render('creators/mainCreator.ejs', { errorMessage: 'Please upload an image file!', creator: creator, games: games })
         unlinkFile(req.files, req.session.passport.user)
         return
     }
@@ -58,7 +60,7 @@ router.post('/', checkAuth, upload.array('game'), async (req, res) => {
     } catch(e){
         console.log(e)
         unlinkFile(req.files, req.session.passport.user)
-        res.redirect(`/creators/${req.session.passport.user}`)
+        res.render('creators/mainCreator.ejs', { errorMessage: 'Error while creating files!', creator: creator, games: games })
     }
 })
 
